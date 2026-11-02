@@ -13,7 +13,7 @@ jobs:
     outputs:
       versions: ${{ steps.archive.outputs.versions }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: get version(s)
@@ -46,7 +46,7 @@ jobs:
       matrix:
         version: ${{ fromJson(needs.prepare.outputs.versions) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 0
